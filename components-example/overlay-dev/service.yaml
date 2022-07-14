@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devapp
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 8080
+    targetPort: 8080

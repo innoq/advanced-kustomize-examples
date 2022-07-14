@@ -1,0 +1,21 @@
+apiVersion: builtin
+kind: LabelTransformer
+metadata:
+  name: notImportantHere
+labels:
+  team: team-a
+fieldSpecs:
+- kind: Pod
+  path: metadata/labels
+  create: true
+---
+apiVersion: builtin
+kind: AnnotationsTransformer
+metadata:
+  name: notImportantHere
+annotations:
+  team: team-a
+fieldSpecs:
+- kind: Pod
+  path: metadata/annotations
+  create: true

@@ -1,0 +1,7 @@
+apiVersion: apps.innoq.com/v1
+kind: MyApp
+metadata:
+  name: myapp
+spec:
+  image: app
+  configRef: my-config

@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configurations:
+- configuration.yaml # <- configuration for transformers
+resources:
+- app.yaml
+namePrefix: dev-
+configMapGenerator:
+- name: my-config
+  literals:
+  - "appName=my-app"
+images:
+- name: app
+  newName: app
+  newTag: 1.0.0

@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- app.yaml
+namePrefix: prod-
+replacements:
+- source: 
+    name: myapp
+    kind: Service
+    version: v1
+  targets:
+  - select: 
+      kind: Pod
+      name: myapp
+    fieldPaths:
+    - spec.containers.[name=myapp].args.1
